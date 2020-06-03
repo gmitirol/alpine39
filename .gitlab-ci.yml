@@ -23,7 +23,7 @@ stages:
 
 build:
   stage: build
-  image: docker:latest
+  image: $CI_REGISTRY/docker/docker:latest
   cache:
     <<: *cache
   artifacts:
@@ -31,7 +31,7 @@ build:
     paths:
       - $TEMP_IMAGE_PATH
   services:
-    - name: $CI_REGISTRY/docker/dind:latest
+    - name: $CI_REGISTRY/docker/docker:dind
       alias: docker
   script:
     - echo $CI_COMMIT_REF_NAME > ALPINE_BUILD
@@ -43,13 +43,13 @@ build:
 
 test:
   stage: test
-  image: docker:latest
+  image: $CI_REGISTRY/docker/docker:latest
   artifacts:
     expire_in: 1 hour
     paths:
       - $META_PATH
   services:
-    - name: $CI_REGISTRY/docker/dind:latest
+    - name: $CI_REGISTRY/docker/docker:dind
       alias: docker
   script:
     - mkdir -p $META_PATH
@@ -63,9 +63,9 @@ test:
 
 release:
   stage: release
-  image: docker:latest
+  image: $CI_REGISTRY/docker/docker:latest
   services:
-    - name: $CI_REGISTRY/docker/dind:latest
+    - name: $CI_REGISTRY/docker/docker:dind
       alias: docker
   only:
     - /^[0-9]+\.[0-9]+\.[0-9]+$/

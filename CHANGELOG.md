@@ -6,6 +6,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
 
+## [1.1.12] - 2020-06-03
+- Use new docker repo
+
 ## [1.1.11] - 2020-04-16
 - Update Alpine packages
 
@@ -47,7 +50,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ## 1.0.0 - 2019-02-19
 - Initial public release
 
-[Unreleased]:  https://github.com/gmitirol/alpine39/compare/1.1.11...HEAD
+[Unreleased]:  https://github.com/gmitirol/alpine39/compare/1.1.12...HEAD
+[1.1.12]: https://github.com/gmitirol/alpine39/compare/1.1.11...1.1.12
 [1.1.11]: https://github.com/gmitirol/alpine39/compare/1.1.10...1.1.11
 [1.1.10]: https://github.com/gmitirol/alpine39/compare/1.1.9...1.1.10
 [1.1.9]: https://github.com/gmitirol/alpine39/compare/1.1.8...1.1.9
